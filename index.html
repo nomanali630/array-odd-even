@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="rollnumber()">
+        <input type="number" id="roll" placeholder="enter your roll number">
+        <button>add</button>
+    </form>
+    <p id="result"></p>
+    <button onclick="gen()">Generate</button><br>
+    <h5>even</h5>
+    <p id="even"></p>
+    <br>
+
+    <h5>Odd</h5>
+    <p id="odd"></p>
+    <script>
+
+        let arr = []
+        let odd = []
+        let even = []
+        function rollnumber() {
+            let put = document.getElementById("roll").value;
+            arr.push([put])
+            document.getElementById('result').innerText = arr;
+            document.getElementById("roll").value = "";
+
+        }
+
+        function gen() {
+            for (i = 0; i <= arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    odd.push(arr[i])
+                    document.getElementById("odd").innerHTML = odd;
+                }
+                else {
+                    even.push(arr[i])
+                    document.getElementById('even').innerHTML = even;
+                }
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
